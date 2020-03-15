@@ -1,7 +1,5 @@
 package com.sanjay.code;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,23 +9,23 @@ import java.util.Random;
 import java.util.Scanner;
 
 /*
-Java program to choose a random word from this list and print it out.
+Java program to choose a random word from the given list and print it out.
  */
 
 public class RandomWordPrint {
 
+    private static String FILE_PATH = "src/resource/words_alpha.txt";
 
     public static void main(String[] args) {
-       /* Picks a random word from the List built from test_words.txt file. */
+       /* Picks a random word from the List built from words_alpha.txt file. */
 
-        System.out.println("Random Word from the given list: " + getRandomWordFromList(readWordsFromFIle("src/resource/words_alpha.txt")));
+        System.out.println("Printing Random Word from the given text file--> " + getRandomWordFromList(readWordsFromFIle(FILE_PATH)));
 
     }
-
+    /* Method to return a random word from the given words list */
     public static String getRandomWordFromList(List<String> wordsList) {
-        String word ;
         if(wordsList.isEmpty()) {
-            return "No words present in the list to print";
+            return "Words List is empty";
         } else {
             //Choose random number between 0 to words List size
             int randNum = new Random().nextInt(wordsList.size());
@@ -36,7 +34,7 @@ public class RandomWordPrint {
 
     }
 
-
+    /* Method to read words from a given file and return the words list*/
     public static List<String> readWordsFromFIle(String file){
 
         List<String> wordList = new ArrayList<String>();

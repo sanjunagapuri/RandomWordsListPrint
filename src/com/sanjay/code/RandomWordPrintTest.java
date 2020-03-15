@@ -8,12 +8,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.testng.Assert.*;
 
 public class RandomWordPrintTest extends RandomWordPrint {
 
-    List<String> wordList ;
-    String filePath ;
+    private List<String> wordList ;
+    private String filePath ;
     @BeforeMethod
     public void setUp() {
         wordList = new ArrayList<String>();
@@ -23,7 +22,7 @@ public class RandomWordPrintTest extends RandomWordPrint {
     @Test
     public void testGetRandomWordFromListEmpty() {
 
-        Assert.assertEquals(getRandomWordFromList(wordList), "No words present in the list to print");
+        Assert.assertEquals(getRandomWordFromList(wordList), "Words List is empty");
     }
 
     @Test
